@@ -9,9 +9,9 @@ interface Data {
   dayOfTheWeek: string;
 }
 
-const data: Data = {
+let data: Data = {
   events: [] as EventInfo[],
-  dayOfTheWeek: '',
+  dayOfTheWeek: 'Sunday',
 };
 
 function writeJSON(data: Data): string {
@@ -19,14 +19,11 @@ function writeJSON(data: Data): string {
   localStorage.setItem('data-storage', dataJSON);
   return JSON.stringify(data);
 }
-function readJSON(): Data {
+function readJSON(){
   const returnJSON = localStorage.getItem('data-storage');
   if (returnJSON) {
     data = JSON.parse(returnJSON);
-  } else {
-    return data;
   }
 }
 
 readJSON();
-console.log('data', data);

@@ -21,16 +21,18 @@
       <div class="row">
         <div class="column-full">
           <form class="day-form row justify-center">
-            <label for="day-picker">Day of Week</label><br />
-            <select name="day-picker" id="day-picker">
-              <option>Sunday</option>
-              <option>Monday</option>
-              <option>Tuesday</option>
-              <option>Wednesday</option>
-              <option>Thursday</option>
-              <option>Friday</option>
-              <option>Saturday</option>
-            </select>
+            <div class="row">
+              <label for="day-picker">Day of Week</label><br>
+              <select name="day-picker" id="day-picker">
+                <option>Sunday</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+              </select>
+            </div>
           </form>
           <div class="column-full row justify-center">
             <a class="new-event">Add New Event</a>
@@ -47,30 +49,9 @@
               <tr>
                 <td>10:00</td>
                 <td>Pie Event</td>
-                <td>Buy Pie Stuff</td>
-              </tr>
-              <tr>
-                <td>12:00</td>
-                <td>Cake Event</td>
-                <td>Buy Cake Stuff</td>
-              </tr>
-              <tr>
-                <td>2:00</td>
-                <td>Hot Dog Event</td>
-                <td>Buy Hot Dog Stuff</td>
-              </tr>
-              <tr>
-                <td>4:00</td>
-                <td>Ice Cream Event</td>
-                <td>Buy Ice Cream Stuff</td>
-              </tr>
-              <tr>
-                <td>6:00</td>
-                <td>Egg Event</td>
                 <td>
-                  Lot and lots and lots of eggs Lot and lots and lots of eggs
-                  Lot and lots and lots of eggs Lot and lots and lots of eggs
-                  Lot and lots and lots of eggs
+                  <a class="edit">Edit</a>
+                  <a class = "delete">Delete</a>
                 </td>
               </tr>
             </tbody>
@@ -93,7 +74,7 @@
                 </select>
               </div>
               <div>
-                <label for="modal-select-day">Day of the Week:</label><br />
+                <label for="modal-select-day">Day of the Week:</label>
                 <select
                   name="modal-select-day"
                   id="modal-select-day"
@@ -111,7 +92,7 @@
               </div>
               <div>
                 <label>Event Information:</label><br />
-                <textarea class = 'notes' required></textarea>
+                <textarea class="notes" required></textarea>
               </div>
               <div>
                 <a class="cancel">Cancel</a>
@@ -122,7 +103,7 @@
         </dialog>
       </div>
     </main>
-    <script src = 'data.js'></script>
+    <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

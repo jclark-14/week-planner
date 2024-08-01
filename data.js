@@ -1,6 +1,6 @@
 var data = {
     events: [],
-    dayOfTheWeek: '',
+    dayOfTheWeek: 'Sunday',
 };
 function writeJSON(data) {
     var dataJSON = JSON.stringify(data);
@@ -12,9 +12,5 @@ function readJSON() {
     if (returnJSON) {
         data = JSON.parse(returnJSON);
     }
-    else {
-        return data;
-    }
 }
 readJSON();
-console.log('data', data);

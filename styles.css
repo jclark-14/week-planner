@@ -20,6 +20,7 @@ body {
 /*  maybe delete */
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column-full {
@@ -94,7 +95,9 @@ textarea {
 }
 
 a.cancel,
-a.confirm {
+a.confirm,
+a.edit,
+a.delete {
   color: white;
   background-color: gray;
   padding: 0.25rem 0.5rem;
@@ -103,9 +106,25 @@ a.confirm {
 
 a.confirm {
   background-color: green;
+}
+
+a.edit {
+  background-color: blue;
+}
+
+a.delete {
+  background-color: red;
+}
+
+a.confirm,
+a.delete {
   float: right;
 }
 
 a:hover {
   cursor: pointer;
+}
+
+select {
+  flex-basis: 100%;
 }

@@ -12,18 +12,29 @@ const $eventNotes = document.querySelector(
   'textarea.notes',
 ) as HTMLTextAreaElement;
 const $tbody = document.querySelector('tbody') as HTMLTableSectionElement;
+const $dayPicker = document.querySelector('select#day-picker') as HTMLSelectElement;
+const $modalForm = document.querySelector('form#modal-form') as HTMLFormElement;
 
 function renderInfo(info: EventInfo): HTMLTableRowElement {
   const $tr = document.createElement('tr') as HTMLTableRowElement;
   const $tdTime = document.createElement('td') as HTMLTableCellElement;
-  // let $tdDay = document.createElement('td') as HTMLTableCellElement;
   const $tdNotes = document.createElement('td') as HTMLTableCellElement;
   const $tdActions = document.createElement('td') as HTMLTableCellElement;
+
+  const $editAnchor = document.createElement('a') as HTMLAnchorElement;
+  const $deleteAnchor = document.createElement('a') as HTMLAnchorElement;
+
+  $editAnchor.className = 'edit';
+  $editAnchor.textContent = 'Edit';
+  $deleteAnchor.className = 'delete';
+  $deleteAnchor.textContent = 'Delete';
+
+  $tr.setAttribute('data-day', info.day);
+
   $tbody.appendChild($tr);
   $tdTime.textContent = info.time;
-  // $tdDay.textContent = info.day;
   $tdNotes.textContent = info.notes;
-  $tdActions.textContent = 'edit delete';
+  $tdActions.append($editAnchor, $deleteAnchor);
 
   $tr.append($tdTime, $tdNotes, $tdActions);
 
@@ -37,7 +48,8 @@ if (
   !$confirm ||
   !$selectTime ||
   !$selectDay ||
-  !$eventNotes
+  !$eventNotes ||
+  !$dayPicker
 )
   throw new Error('the query failed');
 
@@ -49,19 +61,18 @@ $cancel.addEventListener('click', function () {
   $dialog.close();
 });
 
-$confirm.addEventListener('click', function (event: Event) {
-  // adds stuff here
-
+$confirm.addEventListener('click', function () {
   const info = {
     time: $selectTime.value,
     day: $selectDay.value,
     notes: $eventNotes.value,
   };
-  console.log(info);
 
   data.events.push(info);
   $tbody.append(renderInfo(info));
   writeJSON(data);
+
+  $modalForm.reset();
   $dialog.close();
 });
 
@@ -70,3 +81,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
     renderInfo(data.events[i]);
   }
 });
+
+$dayPicker.addEventListener('input', function(){
+  data.dayOfTheWeek = $dayPicker.value;
+})
