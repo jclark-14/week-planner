@@ -9,11 +9,12 @@ var $tbody = document.querySelector('tbody');
 function renderInfo(info) {
     var $tr = document.createElement('tr');
     var $tdTime = document.createElement('td');
-    //let $tdDay = document.createElement('td') as HTMLTableCellElement;
+    // let $tdDay = document.createElement('td') as HTMLTableCellElement;
     var $tdNotes = document.createElement('td');
     var $tdActions = document.createElement('td');
+    $tbody.appendChild($tr);
     $tdTime.textContent = info.time;
-    //$tdDay.textContent = info.day;
+    // $tdDay.textContent = info.day;
     $tdNotes.textContent = info.notes;
     $tdActions.textContent = 'edit delete';
     $tr.append($tdTime, $tdNotes, $tdActions);
@@ -43,5 +44,11 @@ $confirm.addEventListener('click', function (event) {
     console.log(info);
     data.events.push(info);
     $tbody.append(renderInfo(info));
+    writeJSON(data);
     $dialog.close();
+});
+document.addEventListener('DOMContentLoaded', function () {
+    for (var i = 0; i < data.events.length; i++) {
+        renderInfo(data.events[i]);
+    }
 });
