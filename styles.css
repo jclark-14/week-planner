@@ -27,11 +27,13 @@ body {
 }
 
 label {
-  display: block;
+  flex-basis: 100%;
+  text-align: center;
 }
 
 h1 {
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 form {
@@ -62,4 +64,39 @@ td {
 
 tbody > tr:nth-child(odd) {
   background-color: #eee;
+}
+
+dialog > div.container {
+  justify-content: center;
+  max-width: 250px;
+  height: 100%;
+  width: 100%;
+}
+
+.modal-select-time,
+.modal-select-day {
+  width: 100%;
+  margin-top: 2px;
+}
+
+#modal-form {
+  margin: 5px;
+}
+
+form > div {
+  margin-bottom: 15px;
+}
+
+textarea {
+  height: 12rem;
+  width: 15rem;
+  margin-top: 2px;
+}
+
+a.cancel,
+a.confirm {
+  color: white;
+  background-color: gray;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
 }

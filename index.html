@@ -20,8 +20,8 @@
     <main class="container justify-center">
       <div class="row">
         <div class="column-full">
-          <form class="day-form">
-            <label for="day-picker">Day of Week</label>
+          <form class="day-form row justify-center">
+            <label for="day-picker">Day of Week</label><br />
             <select name="day-picker" id="day-picker">
               <option>Sunday</option>
               <option>Monday</option>
@@ -32,10 +32,10 @@
               <option>Saturday</option>
             </select>
           </form>
-          <div class="column-full">
+          <div class="column-full row justify-center">
             <a class="new-event">Add New Event</a>
           </div>
-          <table class ='column-full'>
+          <table class="column-full">
             <thead>
               <tr>
                 <th>Time</th>
@@ -67,19 +67,58 @@
               <tr>
                 <td>6:00</td>
                 <td>Egg Event</td>
-                <td>Lot and lots and lots of eggs
-                  Lot and lots and lots of eggs
-                  Lot and lots and lots of eggs
-                  Lot and lots and lots of eggs
+                <td>
+                  Lot and lots and lots of eggs Lot and lots and lots of eggs
+                  Lot and lots and lots of eggs Lot and lots and lots of eggs
                   Lot and lots and lots of eggs
                 </td>
               </tr>
             </tbody>
           </table>
-          <p>
-            2024 Week Planner Inc
-          </p>
+          <p>2024 Week Planner Inc</p>
         </div>
+      </div>
+      <div>
+        <dialog class="modal">
+          <div class="container">
+            <form id="modal-form">
+              <div>
+                <label for="event-time">Time of Event:</label><br />
+                <select id="event-time" class="modal-select-time">
+                  <option>Choose a time</option>
+                  <option>0000</option>
+                  <option>0400</option>
+                  <option>0800</option>
+                  <option>1200</option>
+                </select>
+              </div>
+              <div>
+                <label for="modal-select-day">Day of the Week:</label><br />
+                <select
+                  name="modal-select-day"
+                  id="modal-select-day"
+                  class="modal-select-day">
+                  <option>Choose a day</option>
+                  <option>Sunday</option>
+                  <option>Monday</option>
+                  <option>Tuesday</option>
+                  <option>Wednesday</option>
+                  <option>Thursday</option>
+                  <option>Friday</option>
+                  <option>Saturday</option>
+                </select>
+              </div>
+              <div>
+                <label>Event Information:</label><br />
+                <textarea></textarea>
+              </div>
+              <div>
+                <a class="cancel">Cancel</a>
+                <a class="confirm">Confirm</a>
+              </div>
+            </form>
+          </div>
+        </dialog>
       </div>
     </main>
 
