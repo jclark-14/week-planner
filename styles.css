@@ -100,3 +100,12 @@ a.confirm {
   padding: 0.25rem 0.5rem;
   border-radius: 10px;
 }
+
+a.confirm {
+  background-color: green;
+  float: right;
+}
+
+a:hover {
+  cursor: pointer;
+}

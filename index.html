@@ -84,7 +84,7 @@
             <form id="modal-form">
               <div>
                 <label for="event-time">Time of Event:</label><br />
-                <select id="event-time" class="modal-select-time">
+                <select id="event-time" class="modal-select-time" required>
                   <option>Choose a time</option>
                   <option>0000</option>
                   <option>0400</option>
@@ -97,7 +97,8 @@
                 <select
                   name="modal-select-day"
                   id="modal-select-day"
-                  class="modal-select-day">
+                  class="modal-select-day"
+                  required>
                   <option>Choose a day</option>
                   <option>Sunday</option>
                   <option>Monday</option>
@@ -110,7 +111,7 @@
               </div>
               <div>
                 <label>Event Information:</label><br />
-                <textarea></textarea>
+                <textarea class = 'notes' required></textarea>
               </div>
               <div>
                 <a class="cancel">Cancel</a>
@@ -121,7 +122,7 @@
         </dialog>
       </div>
     </main>
-
+    <script src = 'data.js'></script>
     <script src="main.js"></script>
   </body>
 </html>
