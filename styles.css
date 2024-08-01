@@ -12,14 +12,54 @@ body {
 
 .container {
   width: 900px;
+  max-width: 900px;
   margin: 0 auto;
-  border: 2px red solid;
+  display: flex;
 }
 
+/*  maybe delete */
 .row {
   display: flex;
 }
 
 .column-full {
   flex-basis: 100%;
+}
+
+label {
+  display: block;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+form {
+  margin-top: 4rem;
+  margin-bottom: 7rem;
+}
+
+a.new-event {
+  color: white;
+  background-color: gray;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+table {
+  margin-top: 2rem;
+}
+
+th,
+td {
+  border: 2px solid lightgray;
+  padding: 0.5rem;
+}
+
+td {
+  min-width: 200px;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #eee;
 }

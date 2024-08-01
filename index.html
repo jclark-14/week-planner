@@ -7,28 +7,81 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="column-full">
-        <h1>Weekly Planner</h1>
-      </header>
-
-      <div class="column-full">
-        <h2>Choose Day to Show Events</h2>
-        <forms class="">
-          <label for="day-picker">Day of Week</label>
-          <select name="day-picker" id="day-picker">
-            <option>Sunday</option>
-            <option>Monday</option>
-            <option>Tuesday</option>
-            <option>Wednesday</option>
-            <option>Thursday</option>
-            <option>Friday</option>
-            <option>Saturday</option>
-          </select>
-        </forms>
+    <header>
+      <div class="container justify-center">
+        <div class="row">
+          <div class="column-full">
+            <h1>Weekly Planner</h1>
+            <h2>Choose Day to Show Events</h2>
+          </div>
+        </div>
       </div>
-      <a></a>
-    </div>
+    </header>
+    <main class="container justify-center">
+      <div class="row">
+        <div class="column-full">
+          <form class="day-form">
+            <label for="day-picker">Day of Week</label>
+            <select name="day-picker" id="day-picker">
+              <option>Sunday</option>
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+              <option>Saturday</option>
+            </select>
+          </form>
+          <div class="column-full">
+            <a class="new-event">Add New Event</a>
+          </div>
+          <table class ='column-full'>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Event</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10:00</td>
+                <td>Pie Event</td>
+                <td>Buy Pie Stuff</td>
+              </tr>
+              <tr>
+                <td>12:00</td>
+                <td>Cake Event</td>
+                <td>Buy Cake Stuff</td>
+              </tr>
+              <tr>
+                <td>2:00</td>
+                <td>Hot Dog Event</td>
+                <td>Buy Hot Dog Stuff</td>
+              </tr>
+              <tr>
+                <td>4:00</td>
+                <td>Ice Cream Event</td>
+                <td>Buy Ice Cream Stuff</td>
+              </tr>
+              <tr>
+                <td>6:00</td>
+                <td>Egg Event</td>
+                <td>Lot and lots and lots of eggs
+                  Lot and lots and lots of eggs
+                  Lot and lots and lots of eggs
+                  Lot and lots and lots of eggs
+                  Lot and lots and lots of eggs
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            2024 Week Planner Inc
+          </p>
+        </div>
+      </div>
+    </main>
 
     <script src="main.js"></script>
   </body>
